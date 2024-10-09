@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipular Elementos Multimedia</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('background.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            background: transparent;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        img {
+            max-width: 50%; /* Reducir tamaño de la imagen al 50% */
+            height: auto;
+            border-radius: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img id="mainImage" src="imagen1.png" alt="Imagen">
+        <br>
+        <button onclick="changeImage()">Cambiar Imagen</button>
+    </div>
+
+    <script>
+        function changeImage() {
+            const image = document.getElementById('mainImage');
+            if (image.src.includes('imagen1.png')) {
+                image.src = 'imagen2.jpg';
+            } else {
+                image.src = 'imagen1.png';
+            }
+        }
+    </script>
+</body>
+</html>
